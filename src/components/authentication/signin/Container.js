@@ -1,10 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import Presentation from "./Presentation"
-export class container extends Component {
+class container extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: "",
+      password: "",
+    }
+  }
+
+  handleChange = (e) => {
+    [e.target.id] = e.target.value
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   render() {
     return (
       <div>
-        <Presentation/>
+        <Presentation
+        {...this.state}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        />
       </div>
     )
   }
