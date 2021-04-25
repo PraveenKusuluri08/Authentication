@@ -1,7 +1,9 @@
 import React, { Component } from "react"
-import { ThemeProvider } from "react-bootstrap"
 import Presentation from "./Presentation"
-class container extends Component {
+//import {connect} from "react-redux"
+import {loginSuccess} from "../../../store/actions/actionCreators"
+import { connect } from "react-redux"
+class Container extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -19,6 +21,7 @@ class container extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     console.log(this.state)
+    this.props.logIn(this.state)
   }
 
   render() {
@@ -33,5 +36,11 @@ class container extends Component {
     )
   }
 }
-
-export default container
+const mapDispatchToProps = (dispatch)=>{
+  return{
+    logIn :(creds)=>{
+      dispatch(loginSuccess(creds))
+    }
+  }
+}
+export default connect(null,mapDispatchToProps) (Container)

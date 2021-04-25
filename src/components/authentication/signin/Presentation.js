@@ -4,21 +4,18 @@ import { Button, Card, Form } from "react-bootstrap"
 const Presentation = (props) => {
   const { handleChange, handleSubmit } = props
   return (
-    <div className="container small center align">
+    <div className="container large">
       <Card>
         <Card.Body>
           <Form onSubmit={handleSubmit}>
 
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" id="email" placeholder="Enter email"  onChange={handleChange}/>
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-           
-
-          
+              <Form.Control type="email" id="email"  onChange={handleChange}/>
+            <br/>
+            <br/>
+            <br/>
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" id="password" placeholder="Password" onChange={handleChange} />
+              <Form.Control type="password" id="password"  onChange={handleChange} />
             
 
             <Button variant="primary" type="submit">
