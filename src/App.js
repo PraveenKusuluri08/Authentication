@@ -1,14 +1,17 @@
 
 import "./App.css"
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
-import signin from "./components/authentication/signin"
-
+import Signin from "./components/authentication/Signin"
+import Signup from "./components/authentication/Signup"
+import Dashboard from "./components/dashboard/Dashboard"
 function App() {
   return(
     
     <BrowserRouter>
      <Switch>
-       <Route path="/signin" component={signin}/>
+     <Route exact path="/" component={Dashboard} />
+       <Route path="/signin" component={Signin}/>
+       <Route path="/signup" component={Signup}/>
      </Switch>
     </BrowserRouter>
   )
