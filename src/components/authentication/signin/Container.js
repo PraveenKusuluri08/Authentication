@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { ThemeProvider } from "react-bootstrap"
 import Presentation from "./Presentation"
 class container extends Component {
   constructor(props) {
@@ -10,20 +11,23 @@ class container extends Component {
   }
 
   handleChange = (e) => {
-    [e.target.id] = e.target.value
+    this.setState({
+      [e.target.id]: e.target.value,
+    })
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
+    console.log(this.state)
   }
 
   render() {
     return (
       <div>
         <Presentation
-        {...this.state}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
+          {...this.state}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
       </div>
     )
