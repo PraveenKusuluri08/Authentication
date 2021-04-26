@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import Presentation from "./Presentation"
-//import {connect} from "react-redux"
-import {loginSuccess} from "../../../store/actions/actionCreators"
+
+import { loginSuccess } from "../../../store/actions/actionCreators"
+//import {logIn} from "../../../store/middleware/middleWare"
 import { connect } from "react-redux"
 class Container extends Component {
   constructor(props) {
@@ -25,22 +26,30 @@ class Container extends Component {
   }
 
   render() {
+    const { authError } = this.props
     return (
       <div>
         <Presentation
           {...this.state}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          authError={authError}
         />
       </div>
     )
   }
 }
-const mapDispatchToProps = (dispatch)=>{
-  return{
-    logIn :(creds)=>{
-      dispatch(loginSuccess(creds))
-    }
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError,
   }
 }
-export default connect(null,mapDispatchToProps) (Container)
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logIn: (creds) => {
+      dispatch(loginSuccess(creds))
+    },
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Container)

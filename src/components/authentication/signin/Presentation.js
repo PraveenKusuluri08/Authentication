@@ -1,12 +1,14 @@
 import React from "react"
-import { Button, Card, Form } from "react-bootstrap"
+import { Button, Card, Form,Alert } from "react-bootstrap"
 
 const Presentation = (props) => {
-  const { handleChange, handleSubmit } = props
+  const { handleChange, handleSubmit,authError } = props
   return (
     <div className="container large">
       <Card>
         <Card.Body>
+          {authError ?<Alert varient="danger">{authError}</Alert>:null}
+        
           <Form onSubmit={handleSubmit}>
 
               <Form.Label>Email address</Form.Label>
