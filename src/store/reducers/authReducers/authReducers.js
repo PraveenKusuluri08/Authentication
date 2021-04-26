@@ -19,7 +19,7 @@ export const reducers = (state = initialState, action) => {
       console.log("login Failure")
       return {
         ...state,
-        autheError: "Failure",
+        autheError: action.error.message,
       }
     default:
       return state
