@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import Presentation from "./Presentation"
 
-import { loginSuccess } from "../../../store/actions/actionCreators"
-//import {logIn} from "../../../store/middleware/middleWare"
+import {logIn} from "../../../store/middleware/middleWare"
 import { connect } from "react-redux"
+import { Redirect } from "react-router"
 class Container extends Component {
   constructor(props) {
     super(props)
@@ -26,7 +26,8 @@ class Container extends Component {
   }
 
   render() {
-    const { authError } = this.props
+    const { authError,auth } = this.props
+    // if(auth.uid)return <Redirect to ="/"/>
     return (
       <div>
         <Presentation
@@ -34,22 +35,26 @@ class Container extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
           authError={authError}
+          auth={auth}
         />
       </div>
     )
   }
 }
 const mapStateToProps = (state) => {
+  console.log(state.firebase.auth.uid)
   return {
     authError: state.auth.authError,
+    auth:state.firebase.auth
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     logIn: (creds) => {
-      dispatch(loginSuccess(creds))
+      dispatch(logIn(creds))
     },
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Container)
