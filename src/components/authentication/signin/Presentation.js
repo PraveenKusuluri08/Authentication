@@ -1,8 +1,10 @@
 import React from "react"
 import { Button, Card, Form,Alert } from "react-bootstrap"
+import { Redirect } from "react-router"
 
 const Presentation = (props) => {
-  const { handleChange, handleSubmit,authError } = props
+  const { handleChange, handleSubmit,authError,auth } = props
+  if(auth.uid) return <Redirect to ="/"/>
   return (
     <div className="container large">
       <Card>
