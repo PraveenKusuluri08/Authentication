@@ -1,28 +1,21 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 
-export const useStyles =makeStyles((theme) =>({
+export const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 275,
-    display: "flex",
-    flexWrap: "wrap",
-    
+    // minWidth: 275,
+    // display: "flex",
+    // flexWrap: "wrap",
   },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-  form :{
-    '& > *': {
+  form: {
+    "& > *": {
       margin: theme.spacing(6),
-      width: '85ch',
+      width: "85ch",
     },
   },
- signUp :{
-  margin: theme.spacing(6),
- },
- signIn :{
-  margin: theme.spacing(6),
- }
+  signUp: {
+    margin: theme.spacing(6),
+  },
+  signIn: {
+    margin: theme.spacing(6),
+  },
 }))

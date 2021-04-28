@@ -1,15 +1,13 @@
 import "./App.css"
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter, Switch, Route} from "react-router-dom"
 import Signin from "./Services/Authentication/components/Signin"
 import Signup from "./Services/Authentication/components/Signup"
-import Dashboard from "./components/dashboard/Dashboard"
-import { Provider } from "react-redux"
-import store from "./store/store/store"
-import Topnav from "./components/layout/Navbar/Topnav"
+import Dashboard from "./Services/Dashboard/components/Dashboard"
+import Topnav from "./Services/Layout/components/Navbars/Topnav"
 function App() {
   return (
  
-    <Provider store={store}>
+   
       <BrowserRouter>
      <Topnav/>
         <Switch>
@@ -19,7 +17,7 @@ function App() {
           
         </Switch>
       </BrowserRouter>
-    </Provider>
+  
   )
 }
 

@@ -1,25 +1,23 @@
 import React from "react"
 import { useStyles } from "../../styles/styles"
-import { Redirect } from "react-router"
+//import { Redirect } from "react-router"
 import {
   Card,
   CardActions,
   CardContent,
   Button,
-  FormGroup,
-  FormControl,
-  FormControlLabel,
+ 
   TextField,
   Paper,
 } from "@material-ui/core"
-import { Form } from "react-bootstrap"
+
 const Presentation = (props) => {
-  const { handleChange, handleSubmit, validateForm } = props
+  const { handleChange, handleSubmit} = props
   const classes = useStyles()
 
   return (
     <div className={classes.signIn}>
-      <Paper elevation={6}>
+      <Paper elevation={2}>
       <Card className={classes.root}>
         <CardContent>
           <form onSubmit={handleSubmit} className={classes.form}>
