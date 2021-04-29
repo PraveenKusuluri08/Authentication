@@ -10,12 +10,19 @@ export const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(6),
       width: "85ch",
+      marginRight:theme.spacing(10),
+     
     },
   },
   signUp: {
-    margin: theme.spacing(6),
+    margin: theme.spacing(10),
+    marginRight: theme.spacing(3),
+    marginLeft:"auto"
   },
   signIn: {
     margin: theme.spacing(6),
+    marginRight: theme.spacing(3),
+    marginLeft:"auto"
   },
+ 
 }))

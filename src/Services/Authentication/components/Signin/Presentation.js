@@ -35,8 +35,8 @@ const Presentation = (props) => {
               variant="outlined"
               onChange={handleChange}
             />
-            <CardActions>
-              <Button variant="contained" type="submit" color="primary">
+            <CardActions >
+              <Button variant="contained" type="submit" color="primary" >
                 Signin
               </Button>
             </CardActions>
