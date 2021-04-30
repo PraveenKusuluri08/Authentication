@@ -7,7 +7,7 @@ import Topnav from "./Services/Layout/components/Navbars/Topnav"
 import Createproject from "./Services/Projects/Components/Createproject"
 import {Provider} from "react-redux"
 
-import {store} from "./Store/store"
+import store from "./Store/store"
 function App() {
   return (
  <Provider store={store}>

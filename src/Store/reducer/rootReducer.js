@@ -10,4 +10,4 @@ const rootReducer=combineReducers({
   firestore :firestoreReducer,
   auth : authReducer
 })
-export default rootReducer
+export default rootReducer   
