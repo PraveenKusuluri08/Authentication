@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 import Presentation from "./Presentation"
+import {connect} from "react-redux"
 
+import {logIn} from "../../middleware/index"
+import { CodeSharp } from "@material-ui/icons"
 class Container extends Component {
   constructor(props) {
     super(props)
@@ -19,19 +22,9 @@ class Container extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     console.log(this.state)
+    this.props.logIn(this.state)
    
   }
-
-validateForm=(values)=>{
-  const errors ={};
-  if(!values.this.state.email){
-    errors.this.state.email ="Required"
-  }
-  if (!values.this.state.password) {
-    errors.this.state.password = 'Required';
-  }
-  return errors;
-}
 
   render() {
 
@@ -48,5 +41,9 @@ validateForm=(values)=>{
   }
 }
 
-
-export default Container
+const mapDispatchToProps=(dispatch)=>{
+  return{
+    logIn :(creds)=>dispatch(logIn(creds))
+  }
+}
+export default connect(null,mapDispatchToProps) (Container)
