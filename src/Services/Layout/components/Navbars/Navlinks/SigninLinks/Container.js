@@ -1,11 +1,21 @@
-import React from 'react'
+import React from "react"
 import Presentation from "./Presentation"
-function Container() {
+import { connect } from "react-redux"
+
+import { logOut } from "../../../../../Authentication/middleware/index"
+function Container(props) {
+  const{logOut} =props
   return (
     <div>
-      <Presentation/>
+      <Presentation 
+      logOut={logOut}
+      />
     </div>
   )
 }
-
-export default Container
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logOut: () => dispatch(logOut()),
+  }
+}
+export default connect(null, mapDispatchToProps)(Container)
