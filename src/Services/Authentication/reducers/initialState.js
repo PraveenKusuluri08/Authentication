@@ -1,4 +1,4 @@
 const initialState={
-  authError =null
+  authError :null
 }
 export default initialState

@@ -5,9 +5,12 @@ import Signup from "./Services/Authentication/components/Signup"
 import Dashboard from "./Services/Dashboard/components/Dashboard"
 import Topnav from "./Services/Layout/components/Navbars/Topnav"
 import Createproject from "./Services/Projects/Components/Createproject"
+import {Provider} from "react-redux"
+
+import {store} from "./Store/store"
 function App() {
   return (
- 
+ <Provider store={store}>
    
       <BrowserRouter>
      <Topnav/>
@@ -19,7 +22,7 @@ function App() {
           
         </Switch>
       </BrowserRouter>
-  
+      </Provider>
   )
 }
 
