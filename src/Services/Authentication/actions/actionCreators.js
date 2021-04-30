@@ -16,3 +16,25 @@ export const loginFailure=()=>{
     type:ACTIONS.LOGIN_FAILURE
   }
 }
+
+
+// logut action creators
+
+export const logoutRequest=()=>{
+  return{
+    type:ACTIONS.LOGOUT_REQUEST
+  }
+}
+
+export const logoutSuccess=()=>{
+  return{
+    type:ACTIONS.LOGOUT_SUCCESS
+  }
+}
+
+export const logoutFailure=()=>{
+  return{
+    type:ACTIONS.LOGOUT_SUCCESS
+  }
+}
+

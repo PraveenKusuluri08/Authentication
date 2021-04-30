@@ -3,7 +3,7 @@ import Presentation from "./Presentation"
 import {connect} from "react-redux"
 
 import {logIn} from "../../middleware/index"
-import { CodeSharp } from "@material-ui/icons"
+
 class Container extends Component {
   constructor(props) {
     super(props)

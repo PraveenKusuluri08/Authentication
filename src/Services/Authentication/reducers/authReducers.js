@@ -5,7 +5,7 @@ import initialState from "./initialState"
 const authReducers = (state = initialState, action) => {
   switch (action.type) {
     case ACTIONS.LOGIN_REQUEST:
-      console.log("logging request");
+      console.log("logging request")
       return {
         ...state,
         authError: true,
@@ -22,6 +22,16 @@ const authReducers = (state = initialState, action) => {
         ...state,
         authError: false,
       }
+    case ACTIONS.LOGOUT_REQUEST:
+      console.log("Logout request")
+      return state
+    case ACTIONS.LOGOUT_SUCCESS:
+      console.log("Logout success")
+      return state
+    case ACTIONS.LOGOUT_FAILURE:
+      console.log("Logout failure ")
+      return state
+
     default:
       return state
   }
