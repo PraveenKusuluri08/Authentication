@@ -6,11 +6,9 @@ export class Container extends Component {
 
     this.state = {
       title: "",
-      subject: "",
+    
       content: "",
-      clients: "",
-      developers: "",
-      address: "",
+     
     }
   }
 handleChange=(e)=>{
