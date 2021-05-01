@@ -12,9 +12,9 @@ function Presentation(props) {
       <Paper elevation={4}>
         <form onSubmit={handleSubmit} className={classes.form}>
           <TextField id="title" label="Title" variant="outlined" onChange={handleChange} />
-          <TextField id="subject" label="Subject" variant="outlined" onChange={handleChange} />
-          <TextField id="content" label="Content" variant="outlined" onChange={handleChange} />
-          <TextareaAutosize aria-label="minimum height" rowsMin={3} placeholder="Address" id="address"onChange={handleChange} />
+         
+         
+          <TextareaAutosize aria-label="minimum height" rowsMin={3} placeholder="What ToDo" id="content"onChange={handleChange} />
           <Button variant="contained" type="submit" color="primary">
             Create Project
           </Button>

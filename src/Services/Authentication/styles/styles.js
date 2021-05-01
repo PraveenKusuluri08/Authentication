@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme) => ({
   signIn: {
     margin: theme.spacing(6),
     marginRight: theme.spacing(3),
-    marginLeft:"auto"
+    marginLeft:"100px"
   },
  
 }))
