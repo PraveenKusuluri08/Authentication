@@ -8,7 +8,7 @@ export const projectRequest=()=>{
 
 export const projectSuccess=()=>{
   return{
-    tyoe:ACTIONS.PROJECT_SUCCESS
+    type:ACTIONS.PROJECT_SUCCESS
   }
 }
 
