@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import Presentation from "./Presentation"
+import {connect} from "react-redux"
 export class Container extends Component {
   constructor(props) {
     super(props)
@@ -18,6 +19,7 @@ handleChange=(e)=>{
 }
 handleSubmit=(e)=>{
   e.preventDefault();
+ this.props.todoData(this.state)
 }
   render() {
     return (
@@ -31,5 +33,5 @@ handleSubmit=(e)=>{
     )
   }
 }
-
+//export default connect(null,mapDispatchToProps) (Container)
 export default Container
