@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import Presentation from "./Presentation"
 import {connect} from "react-redux"
-import { todoData } from "../../middleware"
 export class Container extends Component {
   constructor(props) {
     super(props)
@@ -34,10 +33,5 @@ handleSubmit=(e)=>{
     )
   }
 }
-const mapDispatchToProps = (dispatch)=>{
-  return{
-    todoData :(to_do)=>dispatch(todoData(to_do))
-  }
-}
-export default connect(null,mapDispatchToProps) (Container)
-// export default Container
+//export default connect(null,mapDispatchToProps) (Container)
+export default Container
