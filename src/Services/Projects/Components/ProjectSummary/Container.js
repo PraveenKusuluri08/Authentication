@@ -2,10 +2,10 @@ import React, { Component } from "react"
 import Presentation from "./Presentation"
 export class Container extends Component {
   render() {
-    const { todo } =this.props
+    const { todoValue } =this.props
     return (
       <div>
-        <Presentation todo={todo} />
+        <Presentation todoValue={todoValue} />
       </div>
     )
   }
